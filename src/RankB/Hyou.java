@@ -40,6 +40,7 @@ public class Hyou {
 			rows -= diff;
 		}
 		
+		input.close();
 	}
 
 }

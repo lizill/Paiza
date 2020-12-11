@@ -1,6 +1,5 @@
 package RankB;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class AiSyouCheck {
@@ -14,20 +13,16 @@ public class AiSyouCheck {
 		int[] arrS = makeArrS(s);
 		int[] arrT = makeArrS(t);
 		
-//		System.out.println(Arrays.toString(arrS));
-//		System.out.println(Arrays.toString(arrT));
-		
 		int sumST = sumST(arrS, arrT);
 		int sumTS = sumTS(arrT, arrS);
-		
-//		System.out.println(sumST);
-//		System.out.println(sumTS);
 		
 		if(sumST>sumTS) {
 			System.out.println(sumST);
 		} else {
 			System.out.println(sumTS);
 		}
+		
+		input.close();
 	}
 	
 	public static int sumTS(int[] arrT, int[] arrS) {
