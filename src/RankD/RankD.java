@@ -1,4 +1,4 @@
-package RankA;
+package RankD;
 
 import java.util.Scanner;
 
