@@ -9,7 +9,25 @@ public class RankD {
 //		nKakuKata();
 //		printString();
 //		underLine();
-		plus();
+//		plus();
+//		email();
+		pencil();
+	}
+	
+	public static void pencil() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		System.out.println(n*12);
+	}
+	
+	public static void email() {
+		Scanner input = new Scanner(System.in);
+		String host = input.next();
+		String domain = input.next();
+		
+		System.out.println(host + "@" + domain);
 	}
 	
 	public static void plus() {
