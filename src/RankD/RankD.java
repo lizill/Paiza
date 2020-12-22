@@ -11,7 +11,152 @@ public class RankD {
 //		underLine();
 //		plus();
 //		email();
-		pencil();
+//		pencil();
+//		aButtonbButton();
+//		kazokude();
+//		juice();
+//		absoluteValue();
+//		medalist();
+//		wine();
+//		makeKamakura();
+//		automaticCharge();
+//		nthSentence();
+//		digits();
+		freight();
+	}
+	
+	public static void freight() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		System.out.println(100+n*10);
+
+		input.close();
+	}
+	
+	public static void digits() {
+		Scanner input = new Scanner(System.in);
+		
+		String num = input.next();
+		
+		System.out.println(num.length());
+		input.close();
+	}
+	
+	public static void nthSentence() {
+		Scanner input = new Scanner(System.in);
+		
+		String str = input.next();
+		int n = input.nextInt();
+		
+		for(int i=0; i<n; i++) {
+			System.out.print(str.charAt(i));
+		}
+		input.close();
+	}
+	
+	public static void automaticCharge() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		if(n<10000) n += 10000;
+		
+		System.out.println(n);
+		input.close();
+	}
+	
+	public static void makeKamakura() {
+		Scanner input = new Scanner(System.in);
+		
+		int a = input.nextInt();
+		int b = input.nextInt();
+		
+		int result = a*a*a - b*b*b;
+		
+		System.out.println(result);
+		input.close();
+	}
+	
+	public static void wine() {
+		Scanner input = new Scanner(System.in);
+		
+		String str = input.nextLine();
+		
+		System.out.println("Best in " + str);
+		input.close();
+	}
+	
+	public static void medalist() {
+		Scanner input = new Scanner(System.in);
+		
+		String gold = input.next();
+		String silver = input.next();
+		String bronze = input.next();
+		
+		System.out.println("Gold " + gold);
+		System.out.println("Silver " + silver);
+		System.out.println("Bronze " + bronze);
+		input.close();
+	}
+	
+	public static void absoluteValue() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		if(n<0) n *= -1;
+		
+		System.out.println(n);
+		input.close();
+	}
+	
+	public static void juice() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		
+		System.out.println(n/m);
+		input.close();
+	}
+	
+	public static void kazokude() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int h = input.nextInt();
+		int w = input.nextInt();
+		
+		int okashi = h*w;
+		int result = okashi%n;
+		
+		System.out.println(result);
+		input.close();
+	}
+	
+	public static void bounenkai() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		
+		int nomihoudai = n*6000;
+		int hutuu = m*4000;
+		
+		System.out.println(nomihoudai+hutuu);
+		input.close();
+	}
+	
+	public static void aButtonbButton() {
+		Scanner input = new Scanner(System.in);
+		
+		int a = input.nextInt();
+		int b = input.nextInt();
+		
+		System.out.println(a-b);
+		input.close();
 	}
 	
 	public static void pencil() {
@@ -20,6 +165,7 @@ public class RankD {
 		int n = input.nextInt();
 		
 		System.out.println(n*12);
+		input.close();
 	}
 	
 	public static void email() {
@@ -28,6 +174,7 @@ public class RankD {
 		String domain = input.next();
 		
 		System.out.println(host + "@" + domain);
+		input.close();
 	}
 	
 	public static void plus() {
