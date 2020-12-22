@@ -8,7 +8,50 @@ public class RankC {
 
 //		kakomu();
 //		handoruname();
-		leet();
+//		leet();
+		numbersRule();
+	}
+	
+	private static void numbersRule() {
+		Scanner input = new Scanner(System.in);
+		
+		String n = input.next();
+		String backN = backStr(n);
+		int sum = Integer.parseInt(n) + Integer.parseInt(backN);
+		
+		while(true) {
+			if(checkNum(sum)) {
+				System.out.println(sum);
+				break;
+			} else {
+				n = Integer.toString(sum);
+				backN = backStr(n);
+				sum = Integer.parseInt(n) + Integer.parseInt(backN);
+			}
+		}
+
+	}
+	
+	private static boolean checkNum(int sum) {
+		String sumStr = Integer.toString(sum);
+		
+		for(int i=0; i<=sumStr.length()/2-1; i++) {
+			if(sumStr.charAt(i)!=sumStr.charAt(sumStr.length()-1-i)) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	private static String backStr(String originStr) {
+		String backStr = "";
+		
+		for(int i=originStr.length()-1; i>=0; i--) {
+			backStr += originStr.charAt(i);
+		}
+		
+		return backStr;
 	}
 	
 	private static void leet() {
