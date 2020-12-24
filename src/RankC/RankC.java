@@ -9,7 +9,33 @@ public class RankC {
 //		kakomu();
 //		handoruname();
 //		leet();
-		numbersRule();
+//		numbersRule();
+		pointPay();
+	}
+	
+	private static void pointPay() {
+		Scanner input = new Scanner(System.in);
+		
+		int money = input.nextInt();
+		int count = input.nextInt();
+		int[] pay = new int[count];
+		for(int i=0; i<count; i++) {
+			pay[i] = input.nextInt();
+		}
+		
+		int point = 0;
+		for(int i=0; i<count; i++) {
+			if(point>=pay[i]) {
+				point -= pay[i];
+			} else {
+				money -= pay[i];
+				point += pay[i]/10;
+			}
+			
+			System.out.println(money + " " + point);
+		}
+		
+		input.close();
 	}
 	
 	private static void numbersRule() {
