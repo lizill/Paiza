@@ -22,7 +22,39 @@ public class RankD {
 //		automaticCharge();
 //		nthSentence();
 //		digits();
-		freight();
+//		freight();
+//		displayOfCalculator();
+		intervalTyphoons();
+	}
+	
+	public static void intervalTyphoons() {
+		Scanner input = new Scanner(System.in);
+		
+		int[] num = new int[5];
+		
+		for(int i=0; i<5; i++) {
+			num[i] = input.nextInt();
+			if(i>0) {
+				System.out.println(num[i]-num[i-1]);
+			}
+		}
+		
+		input.close();
+	}
+	
+	public static void displayOfCalculator() {
+		Scanner input = new Scanner(System.in);
+		
+		int a = input.nextInt();
+		int b = input.nextInt();
+		
+		if(a*b>=10000) {
+			System.out.println("NG");
+		} else {
+			System.out.println(a*b);
+		}
+		
+		input.close();
 	}
 	
 	public static void freight() {

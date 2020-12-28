@@ -10,7 +10,81 @@ public class RankC {
 //		handoruname();
 //		leet();
 //		numbersRule();
-		pointPay();
+//		pointPay();
+//		perfectNumber();
+		miniComputer();
+	}
+	
+	private static void miniComputer() {
+		Scanner input = new Scanner(System.in);
+		
+		int count = input.nextInt();
+		
+		int[] a = new int[2];
+		String control = "";
+		int setA;
+		int b;
+		
+		for(int i=0; i<count; i++) {
+			control = input.next();
+			if(control.equals("SET")) {
+				setA = input.nextInt();
+				b = input.nextInt();
+				a[setA-1] = b;
+			} else if(control.equals("ADD")) {
+				b = input.nextInt();
+				a[1] = a[0] + b;
+			} else if(control.equals("SUB")) {
+				b = input.nextInt();
+				a[1] = a[0] - b;
+			}
+		}
+		
+		System.out.println(a[0] + " " + a[1]);
+		input.close();
+	}
+	
+	private static void perfectNumber() {
+		Scanner input = new Scanner(System.in);
+		
+		int count = input.nextInt();
+		String str = "";
+		
+		int[] number = new int[count];
+		for(int i=0; i<count; i++) {
+			number[i] = input.nextInt();
+			
+			switch(checkPerfectNumber(number[i])) {
+			case 1 :
+				str = "nearly";
+				break;
+			case 0 :
+				str = "perfect";
+				break;
+			default :
+				str = "neither";
+			}
+			
+			System.out.println(str);
+		}
+		
+		input.close();
+	}
+	
+	private static int checkPerfectNumber(int num) {
+		int diff = 0;
+		
+		int sum = 0;
+		for(int i=1; i<=num/2; i++) {
+			if(num%i == 0) {
+				sum += i;
+			}
+		}
+		
+		diff = num - sum;
+		if(diff<0) diff *= -1;
+		
+		return diff;
 	}
 	
 	private static void pointPay() {
