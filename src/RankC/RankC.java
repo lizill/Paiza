@@ -1,5 +1,6 @@
 package RankC;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class RankC {
@@ -12,7 +13,87 @@ public class RankC {
 //		numbersRule();
 //		pointPay();
 //		perfectNumber();
-		miniComputer();
+//		miniComputer();
+//		scoring();
+//		cardArrangement();
+		logFilter();
+	}
+	
+	private static void logFilter() {
+		Scanner input = new Scanner(System.in);
+		
+		int count = input.nextInt();
+		String log = input.next();
+		String[] strs = new String[count];
+		boolean none = true;
+		
+		for(int i=0; i<count; i++) {
+			strs[i] = input.next();
+			
+			for(int j=0; j<strs[i].length(); j++) {
+				if(strs[i].charAt(j)==log.charAt(0) && j+log.length()<=strs[i].length()) {
+					if(checkLog(j, strs[i], log)) {
+						System.out.println(strs[i]);
+						none = false;
+						break;
+					}
+				}
+			}
+		}
+		
+		if(none) System.out.println("None");
+		input.close();
+	}
+	
+	private static boolean checkLog(int j, String str, String log) {
+		String newStr = "";
+		
+		for(int i=j; i<j+log.length(); i++) {
+			newStr += str.charAt(i);
+		}
+		
+		if(log.equals(newStr)) return true;
+		
+		return false;
+	}
+	
+	private static void cardArrangement() {
+		Scanner input = new Scanner(System.in);
+		int[] nums = new int[4];
+		
+		for(int i=0; i<4; i++) {
+			nums[i] = input.nextInt();
+		}
+		
+		Arrays.sort(nums);
+//		System.out.println(Arrays.toString(nums));
+		
+		System.out.println((nums[3]+nums[2])*10 + nums[1] + nums[0]);
+		
+		input.close();
+	}
+	
+	private static void scoring() {
+		Scanner input = new Scanner(System.in);
+		
+		int num = input.nextInt();
+		int minGrade = input.nextInt();
+		
+		int[][] studentInfo = new int[num][2];
+		
+		for(int i=0; i<num; i++) {
+			for(int j=0; j<2; j++) {
+				studentInfo[i][j] = input.nextInt();
+			}
+			
+			int grade = studentInfo[i][0] - (studentInfo[i][1] * 5);
+			if(grade<0) grade = 0;
+			
+			if(grade >= minGrade) System.out.println(i+1);
+		}
+		
+		input.close();
+		
 	}
 	
 	private static void miniComputer() {

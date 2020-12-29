@@ -24,7 +24,35 @@ public class RankD {
 //		digits();
 //		freight();
 //		displayOfCalculator();
-		intervalTyphoons();
+//		intervalTyphoons();
+//		aFewDaysLater();
+//		oddorEven();
+	}
+	
+	
+	
+	public static void oddorEven() {
+		Scanner input = new Scanner(System.in);
+
+		int n = input.nextInt();
+		String str = "";
+		if(n%2==0) {
+			str = "even";
+		} else str = "odd";
+		
+		System.out.println(str);
+		
+		input.close();
+	}
+	
+	public static void aFewDaysLater() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		System.out.println(n*7);
+		
+		input.close();
 	}
 	
 	public static void intervalTyphoons() {
