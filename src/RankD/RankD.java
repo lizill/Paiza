@@ -28,7 +28,149 @@ public class RankD {
 //		aFewDaysLater();
 //		oddorEven();
 //		calculateDensity();
-		tanzaku();
+//		tanzaku();
+//		okashi();
+//		screenConfiguration();
+//		pyramids();
+//		remainder();
+//		numberOfMatches();
+//		bonus();
+//		beforeChrist();
+//		polygon();
+//		numberOfString();
+//		charReduction();
+		negoOnContract();
+	}
+	
+	public static void negoOnContract() {
+		Scanner input = new Scanner(System.in);
+		
+		String str = input.next();
+		
+		int count = 0;
+		for(int i=0; i<str.length(); i++) {
+			if(str.charAt(i)=='y') count++;
+		}
+		
+		System.out.println(count);
+		
+		input.close();
+	}
+	
+	public static void charReduction() {
+		Scanner input = new Scanner(System.in);
+
+		int n = input.nextInt();
+		String str = input.next();
+		String newStr = "";
+		
+		for(int i=0; i<n; i++) {
+			newStr += str.charAt(i);
+		}
+		
+		System.out.println(newStr);
+		
+		input.close();
+	}
+	
+	public static void numberOfString() {
+		Scanner input = new Scanner(System.in);
+		
+		String str = input.next();
+		int n = input.nextInt();
+		
+		System.out.println(str.charAt(n-1));
+		
+		input.close();
+	}
+	
+	public static void polygon() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		System.out.println(n/180+2);
+		
+		input.close();
+	}
+	
+	public static void beforeChrist() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		
+		System.out.println(m-n);
+		
+		input.close();
+	}
+	
+	public static void bonus() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		
+		System.out.println(n*m);
+		
+		input.close();
+	}
+	
+	public static void numberOfMatches() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		System.out.println(n*(n-1)/2);
+		
+		input.close();
+	}
+	
+	public static void remainder() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		
+		System.out.println(n%m);
+		
+		input.close();
+	}
+	
+	public static void pyramids() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		int sum = 0;
+		for(int i=1; i<=n; i++) {
+			sum += i;
+		}
+		
+		System.out.println(sum);
+		
+		input.close();
+	}
+	
+	public static void screenConfiguration() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		
+		System.out.println(n*n-m);
+		
+		input.close();
+	}
+	
+	public static void okashi() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		System.out.println(n/2);
+		
+		input.close();
 	}
 	
 	public static void tanzaku() {
