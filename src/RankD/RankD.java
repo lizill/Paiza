@@ -27,9 +27,32 @@ public class RankD {
 //		intervalTyphoons();
 //		aFewDaysLater();
 //		oddorEven();
+//		calculateDensity();
+		tanzaku();
 	}
 	
+	public static void tanzaku() {
+		Scanner input = new Scanner(System.in);
+		
+		String str = input.next();
+		
+		for(int i=0; i<str.length(); i++) {
+			System.out.println(str.charAt(i));
+		}
+		
+		input.close();
+	}
 	
+	public static void calculateDensity() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		
+		System.out.println(n*m);
+		
+		input.close();
+	}
 	
 	public static void oddorEven() {
 		Scanner input = new Scanner(System.in);

@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class RankC {
 
 	public static void main(String[] args) {
-
 //		kakomu();
 //		handoruname();
 //		leet();
@@ -16,7 +15,25 @@ public class RankC {
 //		miniComputer();
 //		scoring();
 //		cardArrangement();
-		logFilter();
+//		logFilter();
+		numericSurvey();
+	}
+	
+	private static void numericSurvey() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		
+		String binaryStr = Integer.toBinaryString(m);
+//		System.out.println(binaryStr);
+		
+		for(int i=0; i<n; i++) {
+			int number = input.nextInt();
+			System.out.println(binaryStr.charAt(binaryStr.length()-number));
+		}
+		
+		input.close();
 	}
 	
 	private static void logFilter() {
