@@ -39,7 +39,40 @@ public class RankD {
 //		polygon();
 //		numberOfString();
 //		charReduction();
-		negoOnContract();
+//		negoOnContract();
+//		schoolyard();
+//		riceWeight();
+		chargingTime();
+	}
+	
+	public static void chargingTime() {
+		Scanner input = new Scanner(System.in);
+
+		int n = input.nextInt();
+		
+		System.out.println(100-n);
+
+		input.close();
+	}
+	
+	public static void riceWeight() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		System.out.println(n*150);
+
+		input.close();
+	}
+	
+	public static void schoolyard() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		System.out.println(n*m);
+		
+		input.close();
 	}
 	
 	public static void negoOnContract() {
