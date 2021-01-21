@@ -16,7 +16,68 @@ public class RankC {
 //		scoring();
 //		cardArrangement();
 //		logFilter();
-		numericSurvey();
+//		numericSurvey();
+//		leftGoods();
+//		elevator();
+		ancientMath();
+	}
+	
+	private static void ancientMath() {
+		Scanner input = new Scanner(System.in);
+		
+		String anciM = input.next();
+		int sum = 0;
+		
+		for(int i=0; i<anciM.length(); i++) {
+			switch(anciM.charAt(i)) {
+			case '/' :
+				sum += 1;
+				break;
+			case '<' :
+				sum += 10;
+				break;
+			default :
+			}
+		}
+		
+		System.out.println(sum);
+		input.close();
+	}
+	
+	private static void elevator() {
+		Scanner input = new Scanner(System.in);
+		
+		int index = input.nextInt();
+		int floor[] = new int[index];
+		int sum = 0;
+		int currentFloor = 1;
+		
+		for(int i=0; i<floor.length; i++) {
+			floor[i] = input.nextInt();
+			int dif = currentFloor - floor[i];
+			if(dif < 0) 
+				dif *= -1;
+			sum += dif;
+			currentFloor = floor[i];
+		}
+		
+		System.out.println(sum);
+		input.close();
+	}
+	
+	private static void leftGoods() {
+		Scanner input = new Scanner(System.in);
+		
+		double m = input.nextInt();
+		double p = input.nextInt();
+		double q = input.nextInt();
+		
+		double kakou = m - m*(p/100);
+		double result = kakou - kakou*(q/100);
+		
+		System.out.println(result);
+		
+		input.close();
 	}
 	
 	private static void numericSurvey() {
