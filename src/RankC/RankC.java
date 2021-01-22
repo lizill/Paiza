@@ -19,7 +19,42 @@ public class RankC {
 //		numericSurvey();
 //		leftGoods();
 //		elevator();
-		ancientMath();
+//		ancientMath();
+		highAndDraw();
+	}
+	
+	private static void highAndDraw() {
+		Scanner input = new Scanner(System.in);
+		
+		String result = "";
+		
+		final int PARENT_A = input.nextInt();
+		final int PARENT_B = input.nextInt();
+		
+		int index = input.nextInt();
+		for(int i=0; i<index; i++) {
+			
+			int childA = input.nextInt();
+			int childB = input.nextInt();
+			
+			if(childA == PARENT_A) {
+				if(childB>PARENT_B) {
+					result = "High";
+				} else {
+					result = "Low";
+				}
+			} else {
+				if(childA>PARENT_A) {
+					result = "Low";
+				} else {
+					result = "High";
+				}
+			}
+			
+			System.out.println(result);
+		}
+		
+		input.close();
 	}
 	
 	private static void ancientMath() {

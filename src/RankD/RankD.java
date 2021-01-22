@@ -42,7 +42,18 @@ public class RankD {
 //		negoOnContract();
 //		schoolyard();
 //		riceWeight();
-		chargingTime();
+//		chargingTime();
+		minutesToSeconds();
+	}
+	
+	public static void minutesToSeconds() {
+		Scanner input = new Scanner(System.in);
+		
+		int minutes = input.nextInt();
+		
+		System.out.println(minutes*60);
+		
+		input.close();
 	}
 	
 	public static void chargingTime() {
