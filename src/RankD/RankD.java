@@ -43,7 +43,134 @@ public class RankD {
 //		schoolyard();
 //		riceWeight();
 //		chargingTime();
-		minutesToSeconds();
+//		minutesToSeconds();
+//		nutrition();
+//		triangle();
+//		dice();
+//		productivityOfFactory();
+//		remainingPages();
+//		encloseString();
+//		shoppingBag();
+//		designationOfAirport();
+//		calculationOfSurface();
+//		threeFigures();
+		calculatePoints();
+	}
+	
+	public static void calculatePoints() {
+		Scanner input = new Scanner(System.in);
+		
+		int sum = 0;
+		for(int i=0; i<3; i++) {
+			sum += input.nextInt();
+		}
+		System.out.println(sum);
+		
+		input.close();
+	}
+	
+	public static void threeFigures() {
+		Scanner input = new Scanner(System.in);
+		
+		int sum = 1;
+		for(int i=0; i<3; i++) {
+			sum *= input.nextInt();
+		}
+		System.out.println(sum);
+		
+		input.close();
+	}
+	
+	public static void calculationOfSurface() {
+		Scanner input = new Scanner(System.in);
+		
+		int a = input.nextInt();
+		System.out.println(6*a*a);
+		
+		input.close();
+	}
+	
+	public static void designationOfAirport() {
+		Scanner input = new Scanner(System.in);
+		
+		String st = input.next();
+		String designation = "";
+		for(int i=0; i<3; i++) {
+			designation += st.charAt(i);
+		}
+		System.out.println(designation);
+		
+		input.close();
+	}
+	
+	public static void shoppingBag() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		if(n>=1000) n += 3;
+		System.out.println(n);
+		
+		input.close();
+	}
+	
+	public static void encloseString() {
+		Scanner input = new Scanner(System.in);
+		
+		String st = input.next();
+		String c = input.next();
+		System.out.println(c+st+c);
+		
+		input.close();
+	}
+	
+	public static void remainingPages() {
+		Scanner input = new Scanner(System.in);
+		
+		int pageM = input.nextInt();
+		int pageN = input.nextInt();
+		System.out.println(pageM - pageN);
+		
+		input.close();
+	}
+	
+	public static void productivityOfFactory() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int h = input.nextInt();
+		System.out.println(n*h);
+		
+		input.close();
+	}
+	
+	public static void dice() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		System.out.println(7-n);
+		
+		input.close();
+	}
+	
+	public static void triangle() {
+		Scanner input = new Scanner(System.in);
+		
+		int a = input.nextInt();
+		int b = input.nextInt();
+		
+		System.out.println(180-a-b);
+		
+		input.close();
+	}
+	
+	public static void nutrition() {
+		Scanner input = new Scanner(System.in);
+		
+		int purotein = input.nextInt();
+		
+		System.out.println(purotein*1500);
+		
+		input.close();
 	}
 	
 	public static void minutesToSeconds() {
