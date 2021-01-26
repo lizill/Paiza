@@ -54,7 +54,19 @@ public class RankD {
 //		designationOfAirport();
 //		calculationOfSurface();
 //		threeFigures();
-		calculatePoints();
+//		calculatePoints();
+		nthHeight();
+
+	}
+	
+	public static void nthHeight() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		System.out.println(n/10*m);
+		
+		input.close();
 	}
 	
 	public static void calculatePoints() {

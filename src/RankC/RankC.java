@@ -20,7 +20,32 @@ public class RankC {
 //		leftGoods();
 //		elevator();
 //		ancientMath();
-		highAndDraw();
+//		highAndDraw();
+		stormZone();
+	}
+	
+	private static void stormZone() {
+		Scanner input = new Scanner(System.in);
+		
+		int xc = input.nextInt();
+		int yc = input.nextInt();
+		int r1 = input.nextInt();
+		int r2 = input.nextInt();
+		String st = "";
+		
+		int count = input.nextInt();
+		for(int i=0; i<count; i++) {
+			int locationX = input.nextInt();
+			int locationY = input.nextInt();
+			
+			int location = (locationX-xc)*(locationX-xc) + (locationY-yc)*(locationY-yc);
+			if(location >= r1*r1 && location <= r2*r2) st = "yes";
+			else st = "no";
+			
+			System.out.println(st);
+		}
+		
+		input.close();
 	}
 	
 	private static void highAndDraw() {
