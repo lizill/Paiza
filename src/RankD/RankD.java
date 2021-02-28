@@ -55,8 +55,20 @@ public class RankD {
 //		calculationOfSurface();
 //		threeFigures();
 //		calculatePoints();
-		nthHeight();
-
+//		nthHeight();
+		countDown();
+	}
+	
+	public static void countDown() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		
+		while(n >= 1) {
+			System.out.println(n--);
+		}
+		
+		input.close();
 	}
 	
 	public static void nthHeight() {
