@@ -56,7 +56,23 @@ public class RankD {
 //		threeFigures();
 //		calculatePoints();
 //		nthHeight();
-		countDown();
+//		countDown();
+		limitNumOfChar();
+	}
+	
+	public static void limitNumOfChar() {
+		Scanner input = new Scanner(System.in);
+		
+		String str = input.next();
+		int strLength = str.length();
+		
+		if(strLength <= 20) {
+			System.out.println("OK");
+		} else {
+			System.out.println("NG");
+		}
+		
+		input.close();
 	}
 	
 	public static void countDown() {
