@@ -57,8 +57,49 @@ public class RankD {
 //		calculatePoints();
 //		nthHeight();
 //		countDown();
-		limitNumOfChar();
-		dateMark();
+//		limitNumOfChar();
+//		dateMark();
+//		gameSteminer();
+		noticeSlip();
+	}
+	
+	public static void noticeSlip() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		char ch = 'E';
+		
+		switch(n) {
+		case 5:
+			ch = 'A';
+			break;
+		case 4:
+			ch = 'B';
+			break;
+		case 3:
+			ch = 'C';
+			break;
+		case 2:
+			ch = 'D';
+			break;
+		case 1:
+			break;
+		}
+		
+		System.out.println(ch);
+		
+		input.close();
+	}
+	
+	public static void gameSteminer() {
+		Scanner input = new Scanner(System.in);
+		
+		int a = input.nextInt();
+		int b = input.nextInt();
+		
+		System.out.println(a/b);
+		
+		input.close();
 	}
 	
 	public static void dateMark() {

@@ -21,7 +21,81 @@ public class RankC {
 //		elevator();
 //		ancientMath();
 //		highAndDraw();
-		stormZone();
+//		stormZone();
+//		lot();
+		monsters();
+	}
+	
+	private static void monsters() {
+		Scanner input = new Scanner(System.in);
+		
+		boolean isEvolution = false;
+		
+		int[] stets = new int[3];
+		for(int i=0; i<stets.length; i++) {
+			stets[i] = input.nextInt();
+		}
+		
+		int n = input.nextInt();
+		
+		for(int i=0; i<n; i++) {
+			String name = input.next();
+			int[] monsters = new int[6];
+			for(int j=0; j<monsters.length; j++) {
+				monsters[j] = input.nextInt();
+			}
+			
+			if(checkMonster(stets, monsters)) {
+				System.out.println(name);
+				isEvolution = true;
+			}
+		}
+		
+		if(!isEvolution) System.out.println("no evolution");
+		
+		input.close();
+	}
+	
+	private static boolean checkMonster(int[] stets, int[] monsters) {
+		
+		for(int i=0; i<stets.length; i++) {
+			if(!(stets[i] >= monsters[i*2] && stets[i] <= monsters[i*2+1])) return false;
+		}
+		
+		return true;
+	}
+	
+	private static void lot() {
+		Scanner input = new Scanner(System.in);
+		
+		
+		int[] lotList = new int[6];
+		for(int i=0; i<lotList.length; i++) {
+			lotList[i] = input.nextInt();
+		}
+		
+		int n = input.nextInt();
+		
+		int[][] playerList = new int[n][6];
+		for(int i=0; i<n; i++) {
+			int count = 0;
+			for(int j=0; j<playerList[i].length; j++) {
+				playerList[i][j] = input.nextInt();
+				if(checkLot(lotList, playerList[i][j])) count++;
+			}
+			System.out.println(count);
+		}
+		
+		input.close();
+	}
+	
+	private static boolean checkLot(int[] lotList, int playerList) {
+		
+		for(int i=0; i<lotList.length; i++) {
+			if(lotList[i] == playerList) return true;
+		}
+		
+		return false;
 	}
 	
 	private static void stormZone() {
