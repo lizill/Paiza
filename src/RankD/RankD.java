@@ -58,6 +58,20 @@ public class RankD {
 //		nthHeight();
 //		countDown();
 		limitNumOfChar();
+		dateMark();
+	}
+	
+	public static void dateMark() {
+		Scanner input = new Scanner(System.in);
+		String[] strList = new String[3];
+		
+		for(int i=0; i<3; i++) {
+			strList[i] = input.next();
+		}
+		
+		System.out.println(strList[1] + "/" + strList[2] + "/" + strList[0]);
+		
+		input.close();
 	}
 	
 	public static void limitNumOfChar() {
