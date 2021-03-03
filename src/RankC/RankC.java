@@ -23,7 +23,178 @@ public class RankC {
 //		highAndDraw();
 //		stormZone();
 //		lot();
-		monsters();
+//		monsters();
+//		lengthMatch();
+//		tradeStocks();
+//		boxForBalls();
+//		candleFoot();
+//		pointCard();
+		report();
+	}
+	
+	private static void report() {
+		Scanner input = new Scanner(System.in);
+		
+		int k = input.nextInt();
+		int n = input.nextInt();
+		
+		for(int i=0; i<k; i++) {
+			int date = input.nextInt();
+			int atari = input.nextInt();
+			int score = 100/n;
+			char scoreChar = 'D';
+			
+			score *= atari;
+			
+			if(date >= 1 && date <= 9) {
+				score = score * 8 / 10; 
+			} else if(date > 9) {
+				score = 0;
+			}
+			
+			if(score >= 80) {
+				scoreChar = 'A';
+			} else if(score >= 70) {
+				scoreChar = 'B';
+			} else if(score >= 60) {
+				scoreChar = 'C';
+			}
+			
+			System.out.println(scoreChar);
+		}
+		
+		input.close();
+	}
+	
+	private static void pointCard() {
+		Scanner input = new Scanner(System.in);
+		
+		int price, date, point = 0;
+		int n = input.nextInt();
+		
+		for(int i=0; i<n; i++) {
+			date = input.nextInt();
+			price = input.nextInt();
+			
+			int parsent = checkDate(date);
+			
+			point += price * parsent / 100;
+		}
+		
+		System.out.println(point);
+		
+		input.close();
+	}
+	
+	private static int checkDate(int date) {
+		
+		String dateStr = String.valueOf(date);
+		
+		for(int i=0; i<dateStr.length(); i++) {
+			if(dateStr.charAt(i)=='3') return 3;
+			if(dateStr.charAt(i)=='5') return 5;
+		}
+		
+		return 1;
+	}
+	
+	private static void candleFoot() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int[][] priceList = new int[n][4];
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<4; j++) {
+				priceList[i][j] = input.nextInt();
+			}
+		}
+		
+		int maxPrice = priceList[0][0];
+		int minPrice = priceList[0][0];
+		
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<4; j++) {
+				if(maxPrice < priceList[i][j]) {
+					maxPrice = priceList[i][j];
+				}
+				if(minPrice > priceList[i][j]) {
+					minPrice = priceList[i][j];
+				}
+			}
+		}
+		
+		System.out.println(priceList[0][0] + " " + priceList[n-1][1] + " " + maxPrice + " " + minPrice);
+		
+		input.close();
+	}
+	
+	private static void boxForBalls() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int r = input.nextInt();
+		for(int i=0; i<n; i++) {
+			int[] boxStatus = new int[3];
+			for(int j=0; j<boxStatus.length; j++)
+				boxStatus[j] = input.nextInt();
+			if(checkBox(boxStatus, r))
+				System.out.println(i+1);
+		}
+		
+		input.close();
+	}
+	
+	private static boolean checkBox(int[] boxStatus, int r) {
+		
+		for(int i=0; i<boxStatus.length; i++)
+			if(boxStatus[i] < 2*r) return false;
+		
+		return true;
+	}
+	
+	private static void tradeStocks() {
+		Scanner input = new Scanner(System.in);
+		
+		int myStocks = 0;
+		int profit = 0;
+		
+		int n = input.nextInt();
+		int c1 = input.nextInt();
+		int c2 = input.nextInt();
+		
+		int[] priceList = new int[n];
+		for(int i=0; i<n-1; i++) {
+			priceList[i] = input.nextInt();
+			
+			if(priceList[i] <= c1) {
+				profit -= priceList[i];
+				myStocks++;
+			} else if(priceList[i] >= c2) {
+				profit += myStocks * priceList[i];
+				myStocks = 0;
+			}
+		}
+		
+		priceList[n-1] = input.nextInt();
+		if(myStocks != 0) profit += myStocks * priceList[n-1];
+		
+		System.out.println(profit);
+		
+		input.close();
+	}
+	
+	private static void lengthMatch() {
+		Scanner input = new Scanner(System.in);
+		
+		String str1 = input.next();
+		String str2 = input.next();
+		String answer = "No";
+		
+		if(str1.length() == str2.length()) answer = "Yes";
+		
+		System.out.println(answer);
+		
+		input.close();
 	}
 	
 	private static void monsters() {
