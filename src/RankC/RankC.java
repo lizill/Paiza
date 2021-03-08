@@ -29,7 +29,30 @@ public class RankC {
 //		boxForBalls();
 //		candleFoot();
 //		pointCard();
-		report();
+//		report();
+		plusOrMultipl();
+	}
+	
+	private static void plusOrMultipl() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int result = 0;
+		
+		for(int i=0; i<n; i++) {
+			int x = input.nextInt();
+			int y = input.nextInt();
+			
+			if(x == y) {
+				result += x * y;
+			} else {
+				result += x + y;
+			}
+		}
+		
+		System.out.println(result);
+		
+		input.close();
 	}
 	
 	private static void report() {
