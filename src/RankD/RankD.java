@@ -60,7 +60,36 @@ public class RankD {
 //		limitNumOfChar();
 //		dateMark();
 //		gameSteminer();
-		noticeSlip();
+//		noticeSlip();
+//		sweetsPresent();
+		comparative();
+	}
+	
+	public static void comparative() {
+		Scanner input = new Scanner(System.in);
+		
+		int n = input.nextInt();
+		int m = input.nextInt();
+		System.out.println(n/m + " " + n%m);
+		
+		input.close();
+	}
+	
+	public static void sweetsPresent() {
+		Scanner input = new Scanner(System.in);
+		
+		String str = input.next();
+		int n = input.nextInt();
+		int result;
+
+		if(str.equals("chocolate")) {
+			result = n * 2;
+		} else {
+			result = n * 5;
+		}
+		System.out.println(result);
+		
+		input.close();
 	}
 	
 	public static void noticeSlip() {
