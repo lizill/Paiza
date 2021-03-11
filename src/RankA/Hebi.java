@@ -6,15 +6,22 @@ public class Hebi {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
+		// 첫줄 변수
 		final int H = input.nextInt();
 		final int W = input.nextInt();
 		final int SY = input.nextInt();
 		final int SX = input.nextInt();
 		final int COUNT = input.nextInt();
+		
+		// 맵 사이즈
+		String[] readMap = new String[H];
+		for(int i=0; i<readMap.length; i++) {
+			readMap[i] = input.next();
+		}
 		char[][] map = new char[H][W];
 		for(int i=0; i<map.length; i++) {
 			for(int j=0; j<map[i].length; j++) {
-				map[i][j] = input.next().charAt(0);
+				map[i][j] = readMap[i].charAt(j);
 			}
 		}
 		
@@ -25,14 +32,11 @@ public class Hebi {
 		boolean isGameOver = false;
 		
 		map[idxY][idxX] = '*';
-		for(int i=0; i<COUNT; i++) {
+		for(int i=0; i<100; i++) {
 			
 			// go
-			String s = input.next();
-			String [] ar =  s.split(" ");
-			
-			int countStep = Integer.parseInt(ar[0]);
-			char turn = ar[1].charAt(0);
+			int countStep = input.nextInt();
+			char turn = input.next().charAt(0);
 			
 			for(int j=presentStep; j<countStep; j++) {
 				switch (dir) {
@@ -55,7 +59,6 @@ public class Hebi {
 				}
 				else {
 					isGameOver = true;
-					System.out.println("장애물과 만남");
 					break;
 				}
 			}
@@ -74,7 +77,6 @@ public class Hebi {
 				dir = 'L';
 			}
 		}
-		System.out.println("종료");
 		
 		for(int i=0; i<map.length; i++) {
 			for(int j=0; j<map[i].length; j++) {
