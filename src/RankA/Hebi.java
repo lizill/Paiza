@@ -32,7 +32,7 @@ public class Hebi {
 		boolean isGameOver = false;
 		
 		map[idxY][idxX] = '*';
-		for(int i=0; i<100; i++) {
+		for(int i=0; i<COUNT; i++) {
 			
 			// go
 			int countStep = input.nextInt();
@@ -53,7 +53,10 @@ public class Hebi {
 					idxX--;
 					break;
 				}
-				
+				if(idxX >= W || idxY >= H || idxX < 0 || idxY < 0) {
+					isGameOver = true;
+					break;
+				}
 				if(map[idxY][idxX] == '.') { // if floor is '.'
 					map[idxY][idxX] = '*';
 				}
@@ -75,6 +78,36 @@ public class Hebi {
 				dir = 'R';
 			} else if((dir == 'U' && turn == 'L') || (dir == 'D' && turn == 'R')) {
 				dir = 'L';
+			}
+		}
+		
+		if(!isGameOver) {
+			for(int j=presentStep; j<100; j++) {
+				switch (dir) {
+				case 'U':
+					idxY--;
+					break;
+				case 'D':
+					idxY++;
+					break;
+				case 'R':
+					idxX++;
+					break;
+				case 'L':
+					idxX--;
+					break;
+				}
+				if(idxX >= W || idxY >= H || idxX < 0 || idxY < 0) {
+					isGameOver = true;
+					break;
+				}
+				if(map[idxY][idxX] == '.') { // if floor is '.'
+					map[idxY][idxX] = '*';
+				}
+				else {
+					isGameOver = true;
+					break;
+				}
 			}
 		}
 		
